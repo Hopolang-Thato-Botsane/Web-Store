@@ -1,0 +1,170 @@
+.header {
+  position: relative;
+  width: 100%;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #d1d1d1;
+  z-index: 100;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoImg {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.desktopNav {
+  display: none;
+  gap: 2.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #111;
+}
+
+.desktopNav a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.desktopNav a:hover {
+  color: #666;
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: flex;
+  }
+  .menuToggle {
+    display: none !important;
+  }
+  .mobileMenu {
+    display: none !important;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+.profileAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.profileAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menuToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  display: flex;
+  align-items: center;
+  z-index: 102;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #e5e5e5;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6rem 2rem 3rem 2rem;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobileMenu.open {
+  transform: translateX(0);
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobileNavLinks a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.mobileNavLinks a span {
+  font-size: 1.25rem;
+}
+
+.mobileSearchContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.mobileSearchInput {
+  width: 100%;
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid #111;
+  font-size: 0.9rem;
+  color: #111;
+  outline: none;
+}
+
+.mobileSearchInput::placeholder {
+  color: #666;
+}
+
+.mobileSearchBtn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
