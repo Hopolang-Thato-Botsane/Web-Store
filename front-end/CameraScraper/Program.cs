@@ -81,13 +81,26 @@ namespace CameraScraper
                             string rawPrice = node.SelectSingleNode(".//span[contains(@class, 'price') or contains(@class, 'money')]")?.InnerText.Trim() 
                                            ?? "R 0";
 
-                            string rawImgUrl = node.SelectSingleNode(".//img")?.GetAttributeValue("data-src", "") 
-                                            ?? node.SelectSingleNode(".//img")?.GetAttributeValue("src", "") 
-                                            ?? "";
+                            // UPDATED: Robust lazy-load image extraction
+                            var imgNode = node.SelectSingleNode(".//img");
+                            string rawImgUrl = "";
 
-                            if (rawImgUrl.StartsWith("//"))
+                            if (imgNode != null)
                             {
-                                rawImgUrl = "https:" + rawImgUrl;
+                                rawImgUrl = imgNode.GetAttributeValue("data-src", "")
+                                         ?? imgNode.GetAttributeValue("data-srcset", "")
+                                         ?? imgNode.GetAttributeValue("srcset", "")
+                                         ?? imgNode.GetAttributeValue("src", "");
+
+                                if (rawImgUrl.Contains(","))
+                                {
+                                    rawImgUrl = rawImgUrl.Split(',')[0].Trim().Split(' ')[0];
+                                }
+
+                                if (rawImgUrl.StartsWith("//"))
+                                {
+                                    rawImgUrl = "https:" + rawImgUrl;
+                                }
                             }
 
                             string generatedId = rawTitle.ToLower()
