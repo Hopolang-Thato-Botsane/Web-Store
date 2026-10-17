@@ -1,0 +1,22 @@
+.section {
+  padding: 40px 40px 60px 40px;
+}
+
+.heading {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111111;
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 16px;
+}
+
+.grid::-webkit-scrollbar {
+  display: none;
+}
