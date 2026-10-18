@@ -30,19 +30,21 @@ export default function ProductCard({ product }: ProductCardProps) {
           className={styles.image} 
         />
       </div>
-      <div>
-        <p className={styles.brand}>{product.Brand}</p>
-        <div className={styles.headerRow}>
-          <h3 className={styles.title}>{product.Name}</h3>
-          <span className={styles.stars}>{renderStars(product.RatingScore)}</span>
-        </div>
-      </div>
       
-      {/* Interactive price / add-to-cart box that triggers on hover */}
-      <div className={styles.priceBox}>
-        <span>{product.Price || 'Price Unavailable'}</span>
-        <span className={styles.dot}>•</span>
-        <span className={styles.addToCartText}>Add to Cart</span>
+      <div className={styles.contentWrapper}>
+        <div>
+          <p className={styles.brand}>{product.Brand}</p>
+          <div className={styles.headerRow}>
+            <h3 className={styles.title}>{product.Name}</h3>
+            <span className={styles.stars}>{renderStars(product.RatingScore)}</span>
+          </div>
+        </div>
+
+        <div className={styles.priceBox}>
+          <span>{product.Price || 'Price on Request'}</span>
+          <span className={styles.dot}>•</span>
+          <span className={styles.addToCartText}>Add to Cart</span>
+        </div>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import Hero from "@/components/Hero/Hero"
 import Footer from "@/components/Footer/Footer";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import productsData from '@/data/products.json';
+import ShopByCategory from "@/components/ShopByCategory/ShopByCategory";
 
 interface ProductItem {
   Id: string;
@@ -22,15 +23,19 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <Header />
-      <Hero /> 
-      <section>
-        <h2>Best Sellers</h2>
-        <div className={styles.grid}>
-          {bestSellers.map((item: ProductItem) => (
-            <ProductCard key={item.Id} product={item} />
-          ))}
-        </div>
-      </section>
+      <Hero />
+      <body>
+        <section>
+        <h2>Best Sellers:</h2>
+          <div className={styles.grid}>
+            {bestSellers.map((item: ProductItem) => (
+              <ProductCard key={item.Id} product={item} />
+            ))}
+          </div>
+        </section>
+        <ShopByCategory/>
+      </body>
+
       <Footer />
     </div>
   );

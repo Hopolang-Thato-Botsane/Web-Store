@@ -8,7 +8,7 @@
   min-height: 85vh;
   display: flex;
   align-items: center;
-  background-image: url('/hero-bg.jpg');
+  background-image: url('/banners/hero-banner.avif');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

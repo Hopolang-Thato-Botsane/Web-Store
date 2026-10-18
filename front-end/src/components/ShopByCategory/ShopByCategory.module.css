@@ -1,0 +1,97 @@
+.section {
+  padding: 40px 40px 60px 40px;
+  background: #e5e5e5;
+}
+
+.heading {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111111;
+  letter-spacing: -0.5px;
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 16px;
+}
+
+.grid::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryCard {
+  position: relative;
+  width: 320px;
+  height: 380px;
+  border: 1px solid #111111;
+  background: #ffffff;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: transform 0.3s ease;
+}
+
+.categoryCard:hover .image {
+  transform: scale(1.03);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.titleBox {
+  position: relative;
+  z-index: 2;
+  margin: auto auto 0 auto;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  letter-spacing: 0.5px;
+  padding-bottom: 40px;
+}
+
+.actionBar {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border-top: 1px solid #111111;
+  padding: 14px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.categoryCard:hover .actionBar {
+  background: #d4af37;
+  color: #111111;
+}
