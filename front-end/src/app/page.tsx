@@ -1,7 +1,5 @@
 import styles from "./page.module.css";
-import Header from '@/components/Header/Header';
 import Hero from "@/components/Hero/Hero"
-import Footer from "@/components/Footer/Footer";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import productsData from '@/data/products.json';
 import ShopByCategory from "@/components/ShopByCategory/ShopByCategory";
@@ -22,7 +20,6 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
-      <Header />
       <Hero />
       <body>
         <section>
@@ -35,8 +32,6 @@ export default function Home() {
         </section>
         <ShopByCategory/>
       </body>
-
-      <Footer />
     </div>
   );
 }

@@ -1,0 +1,265 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.drawer {
+  width: 480px;
+  height: 100vh;
+  background: #e5e5e5;
+  border-left: 1px solid #111111;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #111111;
+  background: #dedede;
+}
+
+.heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #111111;
+  padding: 4px;
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.emptyState {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.emptyText {
+  font-size: 14px;
+  color: #555555;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cartItem {
+  background: #ffffff;
+  border: 1px solid #111111;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.itemImageContainer {
+  width: 90px;
+  height: 90px;
+  border: 1px solid #b5b5b5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: #fafafa;
+}
+
+.itemImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.itemDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemName {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+}
+
+.itemVariant {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+}
+
+.itemPrice {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+  margin-top: 4px;
+}
+
+/* Instructions Accordion */
+.instructionsSection {
+  border: 1px solid #111111;
+  background: #ffffff;
+  margin-top: auto;
+}
+
+.instructionsToggle {
+  width: 100%;
+  padding: 14px 16px;
+  background: #f0f0f0;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  border-bottom: 1px solid #111111;
+}
+
+.instructionsContent {
+  padding: 12px;
+}
+
+.textarea {
+  width: 100%;
+  height: 70px;
+  border: 1px solid #b5b5b5;
+  padding: 8px;
+  font-size: 12px;
+  resize: none;
+  font-family: inherit;
+}
+
+/* Footer Section */
+.footer {
+  padding: 24px;
+  background: #dedede;
+  border-top: 1px solid #111111;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.totalLabel {
+  color: #111111;
+}
+
+.totalValue {
+  color: #111111;
+}
+
+.taxNotice {
+  font-size: 11px;
+  color: #666666;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.actionButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.primaryBtn {
+  background: #111111;
+  color: #ffffff;
+  border: 1px solid #111111;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 1px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.primaryBtn:hover {
+  background: #d4af37;
+  color: #111111;
+  border-color: #d4af37;
+}
+
+.primaryBtnFull {
+  grid-column: span 2;
+  background: #111111;
+  color: #ffffff;
+  border: 1px solid #111111;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.primaryBtnFull:hover {
+  background: #d4af37;
+  color: #111111;
+  border-color: #d4af37;
+}
+
+.secondaryBtn {
+  background: #ffffff;
+  color: #111111;
+  border: 1px solid #111111;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 1px;
+  transition: background 0.2s ease;
+}
+
+.secondaryBtn:hover {
+  background: #e0e0e0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
