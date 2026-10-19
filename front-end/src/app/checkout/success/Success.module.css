@@ -1,0 +1,144 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #111111;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: #666666;
+  margin-bottom: 24px;
+}
+
+.activeCrumb {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+.successLayout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.imageColumn {
+  border: 1px solid #111111;
+  background: #ffffff;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detailsColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0 0 12px 0;
+}
+
+.subtext {
+  font-size: 13px;
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.orderNumber {
+  font-weight: 700;
+  color: #111111;
+  text-decoration: underline;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.itemCard {
+  background: #dedede;
+  border: 1px solid #111111;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.cardImageContainer {
+  width: 100px;
+  height: 100px;
+  background: #ffffff;
+  border: 1px solid #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+}
+
+.cardImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemName {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.itemMeta {
+  font-size: 12px;
+  color: #555555;
+  margin: 0;
+}
+
+.itemPrice {
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.backHomeBtn {
+  background: #d4af37;
+  color: #111111;
+  border: 1px solid #111111;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s ease;
+}
+
+.backHomeBtn:hover {
+  background: #c29e2f;
+}
+
+@media (max-width: 900px) {
+  .successLayout {
+    grid-template-columns: 1fr;
+  }
+}

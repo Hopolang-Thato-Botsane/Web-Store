@@ -1,10 +1,11 @@
 'use client';
-
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import styles from './CartDrawer.module.css';
 
 export default function CartDrawer() {
+  const router = useRouter()
   const { cart, isCartOpen, closeCart, removeFromCart, subtotal } = useCart();
   const [isInstructionsOpen, setIsInstructionsOpen] = useState(false);
   const [instructionsText, setInstructionsText] = useState('');
@@ -18,8 +19,7 @@ export default function CartDrawer() {
   return (
     <div className={styles.overlay} onClick={closeCart}>
       <div className={styles.drawer} onClick={(e) => e.stopPropagation()}>
-        
-        {/* Drawer Header */}
+
         <div className={styles.header}>
           <h2 className={styles.heading}>Cart</h2>
           <button className={styles.closeBtn} onClick={closeCart} aria-label="Close cart">
@@ -27,7 +27,6 @@ export default function CartDrawer() {
           </button>
         </div>
 
-        {/* Drawer Content Body */}
         <div className={styles.body}>
           {cart.length === 0 ? (
             <div className={styles.emptyState}>
@@ -50,7 +49,6 @@ export default function CartDrawer() {
             </div>
           )}
 
-          {/* Order Instructions Accordion */}
           <div className={styles.instructionsSection}>
             <button 
               className={styles.instructionsToggle}
@@ -72,7 +70,6 @@ export default function CartDrawer() {
           </div>
         </div>
 
-        {/* Drawer Footer / Summary */}
         <div className={styles.footer}>
           <div className={styles.totalRow}>
             <span className={styles.totalLabel}>Estimated total:</span>
@@ -94,7 +91,8 @@ export default function CartDrawer() {
                 <button 
                   className={styles.primaryBtn}
                   onClick={() => {
-                    alert('Proceeding to checkout...');
+                    closeCart();
+                    router.push('/checkout');
                   }}
                 >
                   CHECKOUT

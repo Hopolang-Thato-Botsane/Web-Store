@@ -63,7 +63,6 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
       </Link>
 
-      {/* Bottom price and add-to-cart action triggers the cart drawer */}
       <div className={styles.priceBox} onClick={handleAddToCartClick} role="button" tabIndex={0}>
         <span>{product.Price || 'Price on Request'}</span>
         <span className={styles.dot}>•</span>

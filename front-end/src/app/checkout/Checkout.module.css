@@ -1,0 +1,241 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #111111;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: #666666;
+  margin-bottom: 16px;
+}
+
+.activeCrumb {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+.heading {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+.checkoutLayout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.formColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sectionBox {
+  border: 1px solid #111111;
+  background: #dedede;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.expressButtons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.expressBtn {
+  background: #ffffff;
+  border: 1px solid #111111;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  font-size: 13px;
+}
+
+.inputGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.fullWidth {
+  grid-column: span 2;
+}
+
+.input {
+  background: #ffffff;
+  border: 1px solid #111111;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #111111;
+  outline: none;
+  font-family: inherit;
+}
+
+.input::placeholder {
+  color: #888888;
+}
+
+.deliverySubSection {
+  margin-top: 16px;
+  border-top: 1px solid #b5b5b5;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.subTitle {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.radioLabel {
+  background: #ffffff;
+  border: 1px solid #111111;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.radioTextRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 13px;
+}
+
+.radioTextRow small {
+  color: #666666;
+}
+
+.completeBtn {
+  background: #d4af37;
+  color: #111111;
+  border: 1px solid #111111;
+  padding: 18px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.2s ease;
+}
+
+.completeBtn:hover {
+  background: #c29e2f;
+}
+
+.summaryColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summaryHeading {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.summaryItemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.summaryCard {
+  background: #ffffff;
+  border: 1px solid #111111;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.summaryImageContainer {
+  width: 110px;
+  height: 110px;
+  border: 1px solid #b5b5b5;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.summaryImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.summaryDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summaryItemName {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.summaryItemMeta {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+}
+
+.summaryItemPrice {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 4px 0 8px 0;
+}
+
+.removeBtn {
+  background: #ffffff;
+  border: 1px solid #111111;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.2s ease;
+}
+
+.removeBtn:hover {
+  background: #111111;
+  color: #ffffff;
+}
+
+.emptyCartText {
+  font-size: 13px;
+  color: #666666;
+}
+
+@media (max-width: 900px) {
+  .checkoutLayout {
+    grid-template-columns: 1fr;
+  }
+}
