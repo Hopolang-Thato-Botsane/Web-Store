@@ -4,9 +4,8 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 12px; /* This controls the tight gap above the price box */
+  gap: 12px;
   width: 280px;
-  /* height: 420px; <-- REMOVE OR COMMENT THIS OUT */
   flex-shrink: 0;
   cursor: pointer;
 }
@@ -88,7 +87,6 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  /* margin-top: auto; <-- REMOVE THIS SO IT DONT PUSH TO BOTTOM */
 }
 
 .card:hover .priceBox {
