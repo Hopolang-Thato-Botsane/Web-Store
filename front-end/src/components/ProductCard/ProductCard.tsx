@@ -68,6 +68,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <span className={styles.dot}>•</span>
         <span className={styles.addToCartText}>Add to Cart</span>
       </div>
+      
     </div>
   );
 }
