@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './ShopByCategory.module.css';
 
 interface CategoryItem {
@@ -35,7 +36,11 @@ export default function ShopByCategory() {
       <h2 className={styles.heading}>Shop By Category</h2>
       <div className={styles.grid}>
         {categories.map((category) => (
-          <div key={category.id} className={styles.categoryCard}>
+          <Link 
+            key={category.id} 
+            href={`/catalogue?category=${category.id}`}
+            className={styles.categoryCard}
+          >
             <div className={styles.imageWrapper}>
               <img 
                 src={category.image} 
@@ -50,7 +55,7 @@ export default function ShopByCategory() {
             <div className={styles.actionBar}>
               Shop All
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

@@ -1,11 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import ProductCard from "@/components/ProductCard/ProductCard";
 import productsData from '@/data/products.json';
 import styles from "./Catalogue.module.css";
 
-export default function ProductsPage() {
+function CatalogueContent() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get('category');
+
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [priceSort, setPriceSort] = useState<'LOWEST' | 'HIGHEST' | null>(null);
@@ -17,6 +21,19 @@ export default function ProductsPage() {
   const priceRanges = ['BELOW R 1000', 'R 1000 - R 5000', 'R 5000 - R 10 000', 'ABOVE R 10 000'];
   const brands = ['NIKON', 'SONY', 'CANON', 'FUJIFILM', 'PANASONIC', 'SIGMA'];
   const modalCategories = ['CAMERA', 'LIGHTING', 'LENSES & OPTICS', 'AUDIO', 'ACCESSORIES'];
+
+  useEffect(() => {
+    if (categoryParam) {
+      const formatted = categoryParam.toUpperCase();
+      if (formatted === 'LENSES') {
+        setSelectedCategory('LENSES & OPTICS');
+      } else {
+        setSelectedCategory(formatted);
+      }
+    } else {
+      setSelectedCategory('ALL');
+    }
+  }, [categoryParam]);
 
   const parsePrice = (priceStr: string): number => {
     return parseInt(priceStr.replace(/[^\d]/g, ''), 10) || 0;
@@ -182,5 +199,13 @@ export default function ProductsPage() {
       )}
 
     </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div style={{ padding: '60px', textAlign: 'center', color: '#111' }}>Loading Catalogue...</div>}>
+      <CatalogueContent />
+    </Suspense>
   );
 }
