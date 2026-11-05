@@ -28,8 +28,6 @@ namespace CameraScraper
         public int ReviewCount { get; set; } = 18;
         public string Description { get; set; } = "";
         public List<string> GalleryImages { get; set; } = new List<string>();
-        
-        // Detailed specs matching your design accordions
         public List<string> TechnicalSpecifications { get; set; } = new List<string>();
         public List<string> KeyFeatures { get; set; } = new List<string>();
         public List<Review> Reviews { get; set; } = new List<Review>();
@@ -39,14 +37,15 @@ namespace CameraScraper
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("🚀 Querying Orms Direct Native Shopify Endpoints with Rich Schema...");
+            Console.WriteLine("🚀 Querying Orms Direct Native Shopify Endpoints with Fixed Categories...");
 
             var categoryEndpoints = new Dictionary<string, string>
             {
-                { "Cameras", "https://www.ormsdirect.co.za/collections/digital-cameras/products.json?limit=30" },
-                { "Lenses", "https://www.ormsdirect.co.za/collections/camera-lenses/products.json?limit=30" },
-                { "Lighting", "https://www.ormsdirect.co.za/collections/continuous-lighting/products.json?limit=30" },
-                { "Accessories", "https://www.ormsdirect.co.za/collections/memory-cards/products.json?limit=30" }
+                { "CAMERAS", "https://www.ormsdirect.co.za/collections/digital-cameras/products.json?limit=30" },
+                { "LENSES & OPTICS", "https://www.ormsdirect.co.za/collections/camera-lenses/products.json?limit=30" },
+                { "LIGHTING", "https://www.ormsdirect.co.za/collections/continuous-lighting/products.json?limit=30" },
+                { "AUDIO", "https://www.ormsdirect.co.za/collections/microphones/products.json?limit=30" },
+                { "ACCESSORIES", "https://www.ormsdirect.co.za/collections/memory-cards/products.json?limit=30" }
             };
 
             var allProducts = new List<ProductDetail>();
@@ -126,10 +125,17 @@ namespace CameraScraper
             }
 
             string jsonOutput = JsonConvert.SerializeObject(allProducts, Formatting.Indented);
-            string outputPath = Path.Combine(Directory.GetCurrentDirectory(), "products.json");
+
+            string outputPath = Path.Combine(Directory.GetCurrentDirectory(), "src", "data", "products.json");
+
+            if (!Directory.Exists(Path.GetDirectoryName(outputPath)))
+            {
+                outputPath = Path.Combine(Directory.GetCurrentDirectory(), "products.json");
+            }
+
             await File.WriteAllTextAsync(outputPath, jsonOutput);
 
-            Console.WriteLine($"\n💾 Enhanced dataset exported to: {outputPath}");
+            Console.WriteLine($"\n💾 Enhanced dataset successfully exported to: {outputPath}");
         }
 
         private static string FormatSouthAfricanRand(string rawPrice)

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CameraScraper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f541f553a9d34fabb679ddcc108fdba3e3b4309")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5cce30fd77e2859e0c4a92a39a0574d254ccda44")]
 [assembly: System.Reflection.AssemblyProductAttribute("CameraScraper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CameraScraper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

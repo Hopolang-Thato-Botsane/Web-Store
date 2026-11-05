@@ -41,7 +41,21 @@ function CatalogueContent() {
 
   const filteredProducts = productsData.filter((item: any) => {
     const activeCat = filterModalCategory || (selectedCategory === 'ALL' ? null : selectedCategory);
-    const matchesCategory = !activeCat || item.Category?.toUpperCase().includes(activeCat.replace('&', '').trim());
+    
+    let matchesCategory = true;
+    if (activeCat) {
+      const itemCat = item.Category?.toUpperCase() || '';
+      const targetCat = activeCat.toUpperCase();
+
+      if (targetCat.includes('LENS')) {
+        matchesCategory = itemCat.includes('LENS') || itemCat.includes('OPTIC');
+      } else {
+        const cleanTarget = targetCat.replace('&', '').trim();
+        const cleanItemCat = itemCat.replace('&', '').trim();
+        matchesCategory = cleanItemCat.includes(cleanTarget) || cleanTarget.includes(cleanItemCat);
+      }
+    }
+
     const matchesBrand = !selectedBrand || item.Brand?.toUpperCase() === selectedBrand;
 
     const numericPrice = parsePrice(item.Price || '0');
