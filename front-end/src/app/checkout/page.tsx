@@ -37,6 +37,7 @@ export default function CheckoutPage() {
 
       <form onSubmit={handleCompletePayment} className={styles.checkoutLayout}>
         
+        {/* Left Form Column */}
         <div className={styles.formColumn}>
           
           <div className={styles.sectionBox}>
@@ -107,12 +108,9 @@ export default function CheckoutPage() {
               <input type="text" placeholder="CVV Number" required className={styles.input} />
             </div>
           </div>
-
-          <button type="submit" className={styles.completeBtn}>
-            {formatCurrency(finalTotal)} - Complete Payment
-          </button>
         </div>
 
+        {/* Right Summary Column */}
         <div className={styles.summaryColumn}>
           <h3 className={styles.summaryHeading}>
             Shopping Cart ({cart.reduce((sum, item) => sum + item.quantity, 0)})
@@ -143,6 +141,13 @@ export default function CheckoutPage() {
               ))}
             </div>
           )}
+        </div>
+
+        {/* Full-width Complete Payment Button spanning below the grid or anchored cleanly */}
+        <div className={styles.buttonWrapper}>
+          <button type="submit" className={styles.completeBtn}>
+            {formatCurrency(finalTotal)} - Complete Payment
+          </button>
         </div>
 
       </form>
